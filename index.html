@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Trivia Game</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <script src="https://kit.fontawesome.com/b40850cb13.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid" id="titleScreen">
+      <h1 id="title">Trivia Game</h1>
+      <div class="container" id="form-container">
+        <div class="mb-4">
+          <label for="questionCount" class="form-label">Number of Questions:</label>
+          <input type="number" class="form-control" id="questionCount" value="20" min="1" max="50" />
+        </div>
+        <div class="mb-4">
+          <label for="category" class="form-label">Select Category:</label>
+          <select class="form-select form-control" id="category">
+            <option value="any" selected>Any Category</option>
+			      <option value="9">General Knowledge</option>
+            <option value="10">Entertainment: Books</option>
+            <option value="11">Entertainment: Film</option>
+            <option value="12">Entertainment: Music</option>
+            <option value="13">Entertainment: Musicals &amp; Theatres</option>
+            <option value="14">Entertainment: Television</option>
+            <option value="15">Entertainment: Video Games</option>
+            <option value="16">Entertainment: Board Games</option>
+            <option value="17">Science &amp; Nature</option>
+            <option value="18">Science: Computers</option>
+            <option value="19">Science: Mathematics</option>
+            <option value="20">Mythology</option>
+            <option value="21">Sports</option>
+            <option value="22">Geography</option>
+            <option value="23">History</option>
+            <option value="24">Politics</option>
+            <option value="25">Art</option>
+            <option value="26">Celebrities</option>
+            <option value="27">Animals</option>
+            <option value="28">Vehicles</option>
+            <option value="29">Entertainment: Comics</option>
+            <option value="30">Science: Gadgets</option>
+            <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+            <option value="32">Entertainment: Cartoon &amp; Animations</option>
+          </select>
+        </div>
+      </div>
+      <div class="container" id="btn-container">
+        <button type="button" id="btn-start" class="btn shadow-none">Start</button>
+      </div>
+    </div>
+    <div class="container-fluid" id="triviaScreen">
+      <h1 id="category-display"><i class="fa-solid fa-caret-right"></i><span></span><i class="fa-solid fa-caret-left"></i></h1>
+      <div class="stats-div">
+        <div class="score-div">
+          <i class="fa-solid fa-square-check"></i><span id="score-display"></span>
+        </div>
+        <div class="question-count-div">
+          <i class="fa-solid fa-circle-question"></i><span id="question-count-display"></span>
+        </div>
+      </div>
+      <div class="trivia-div">
+        <h2 id="trivia-question"></h2>
+        <div class="questions-div container">
+          <div class="row justify-content-center">
+            <div class="col-12 question" value=""></div>
+            <div class="col-12 question" value=""></div>
+            <div class="col-12 question" value=""></div>
+            <div class="col-12 question" value=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

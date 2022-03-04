@@ -1,0 +1,122 @@
+$bg-color1: #10002B
+$text-color1: #EADDFF
+$text-color2: #ffffffe1
+$theme-color1: #b24dff
+$category-color: #e0aaff
+$stats-color: #d080ff
+
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body, html
+  height: 100%
+  width: 100%
+  
+body
+  background-color: $bg-color1 
+  color: $text-color1 
+  overflow-y: hidden
+
+h1
+  text-align: center
+
+  &#title
+    margin-top: 3rem  
+    font:
+      size: 4rem
+      family: 'Bitter', serif
+
+  &#category-display
+    margin-top: 1rem
+    color: $category-color
+    font:
+      size: 1.5rem
+      family: 'Bitter', serif
+    i
+      font-size: 1.3rem
+      margin: 0 10px
+    
+h2
+  &#trivia-question
+    text-align: center
+    color: $text-color1
+    user-select: none
+    max-width: 1400px
+    margin: auto
+    font:
+      size: 2.2rem
+      family: 'Libre Franklin', sans-serif
+
+div
+  &#triviaScreen
+    display: none
+
+  &.stats-div
+    display: flex
+    justify-content: center
+    color: $stats-color
+
+    div
+      margin: 0 10px
+      span 
+        font-size: 1.6rem
+      i  
+        margin: 0 8px
+        font-size: 1.4rem
+
+  &.trivia-div
+    margin-top: 7rem
+
+    div.questions-div 
+      margin-top: 5rem
+
+      div.question
+        user-select: none
+        cursor: pointer
+        margin: 12px 0
+        text-align: center
+        padding: 18px 0
+        overflow: hidden
+        overflow-wrap: break-word
+        background-color: rgba(128, 71, 226, 0.2)
+        color: rgb(234, 221, 255)
+        border-radius: 0.4rem
+        transition: transform 0.2s, background-color 0.06s
+        font:
+          size: 1.4rem
+          family: 'League Spartan', sans-serif
+        
+        &:hover
+          transform: scale(1.02)
+
+  &#form-container
+    margin-top: 7.5rem    
+
+    label
+      color: $text-color2 
+
+    input, select
+      background-color: $text-color2
+
+  &#btn-container
+    display: flex
+    justify-content: center
+    margin-top: 8rem
+
+    button#btn-start
+      background-color: $bg-color1
+      color: $theme-color1  
+      border: 2px solid $theme-color1
+      border-radius: 0.3rem
+      padding: 9px 70px
+      transition: all 0.3s
+      font:
+        size: 1.55rem
+        family: 'League Spartan', sans-serif
+
+      &:hover
+        background-color: $theme-color1
+        color: $bg-color1
+        

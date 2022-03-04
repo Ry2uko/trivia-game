@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #10002B;
+  color: #EADDFF;
+  overflow-y: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1#title {
+  margin-top: 3rem;
+  font-size: 4rem;
+  font-family: 'Bitter', serif;
+}
+
+h1#category-display {
+  margin-top: 1rem;
+  color: #e0aaff;
+  font-size: 1.5rem;
+  font-family: 'Bitter', serif;
+}
+
+h1#category-display i {
+  font-size: 1.3rem;
+  margin: 0 10px;
+}
+
+h2#trivia-question {
+  text-align: center;
+  color: #EADDFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  max-width: 1400px;
+  margin: auto;
+  font-size: 2.2rem;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+div#triviaScreen {
+  display: none;
+}
+
+div.stats-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #d080ff;
+}
+
+div.stats-div div {
+  margin: 0 10px;
+}
+
+div.stats-div div span {
+  font-size: 1.6rem;
+}
+
+div.stats-div div i {
+  margin: 0 8px;
+  font-size: 1.4rem;
+}
+
+div.trivia-div {
+  margin-top: 7rem;
+}
+
+div.trivia-div div.questions-div {
+  margin-top: 5rem;
+}
+
+div.trivia-div div.questions-div div.question {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  margin: 12px 0;
+  text-align: center;
+  padding: 18px 0;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  background-color: rgba(128, 71, 226, 0.2);
+  color: #eaddff;
+  border-radius: 0.4rem;
+  -webkit-transition: background-color 0.06s, -webkit-transform 0.2s;
+  transition: background-color 0.06s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.06s;
+  transition: transform 0.2s, background-color 0.06s, -webkit-transform 0.2s;
+  font-size: 1.4rem;
+  font-family: 'League Spartan', sans-serif;
+}
+
+div.trivia-div div.questions-div div.question:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+div#form-container {
+  margin-top: 7.5rem;
+}
+
+div#form-container label {
+  color: #ffffffe1;
+}
+
+div#form-container input, div#form-container select {
+  background-color: #ffffffe1;
+}
+
+div#btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 8rem;
+}
+
+div#btn-container button#btn-start {
+  background-color: #10002B;
+  color: #b24dff;
+  border: 2px solid #b24dff;
+  border-radius: 0.3rem;
+  padding: 9px 70px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1.55rem;
+  font-family: 'League Spartan', sans-serif;
+}
+
+div#btn-container button#btn-start:hover {
+  background-color: #b24dff;
+  color: #10002B;
+}
+/*# sourceMappingURL=style.css.map */
