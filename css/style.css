@@ -22,7 +22,7 @@ h1 {
 }
 
 h1#title {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: clamp(2.8rem, 12vw, 4rem);
   font-family: 'Bitter', serif;
 }
@@ -52,7 +52,14 @@ h2#trivia-question {
   font-family: 'Libre Franklin', sans-serif;
 }
 
+div#titleScreen {
+  padding: 1rem;
+}
+
 @media screen and (max-width: 600px) {
+  div#titleScreen h1 {
+    margin-top: 4.5rem;
+  }
   div#titleScreen div#form-container div.mb-4 {
     margin-bottom: 2rem !important;
   }
@@ -74,7 +81,7 @@ h2#trivia-question {
 
 @media screen and (max-height: 900px) {
   div#titleScreen h1 {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   div#titleScreen div#form-container {
     margin-top: 8rem;
@@ -99,13 +106,28 @@ h2#trivia-question {
     height: 100%;
   }
   div#titleScreen h1 {
-    margin-top: 1rem;
+    margin-top: 4rem;
   }
   div#titleScreen div#form-container {
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
   div#titleScreen div#btn-container {
     margin-top: 5.5rem;
+  }
+  div#titleScreen div#btn-container button {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-height: 670px) {
+  div#titleScreen h1 {
+    margin-top: 2rem;
+  }
+  div#titleScreen div#form-container {
+    margin-top: 4rem;
+  }
+  div#titleScreen div#btn-container {
+    margin-top: 4.5rem;
   }
   div#titleScreen div#btn-container button {
     margin-bottom: 2rem;

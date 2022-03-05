@@ -24,7 +24,7 @@ h1
   text-align: center
 
   &#title
-    margin-top: 2rem  
+    margin-top: 3rem  
     font:
       size: clamp(2.8rem, 12vw, 4rem)
       family: 'Bitter', serif
@@ -51,7 +51,11 @@ h2
 
 div
   &#titleScreen
+    padding: 1rem
+    
     @media screen and (max-width: 600px)
+      h1
+        margin-top: 4.5rem
       div
         &#form-container
           div.mb-4 
@@ -70,7 +74,7 @@ div
 
     @media screen and (max-height: 900px)
       h1
-        margin-top: 2rem
+        margin-top: 4rem
       div
         &#form-container
           margin-top: 8rem
@@ -84,16 +88,29 @@ div
       height: 100%
 
       h1
-        margin-top: 1rem
+        margin-top: 4rem
 
       div
         &#form-container
-          margin-top: 5rem
+          margin-top: 6rem
         &#btn-container
           margin-top: 5.5rem
 
           button
-            margin-bottom: 2rem 
+            margin-bottom: 1rem 
+
+
+    @media screen and (max-height: 670px)
+      h1
+        margin-top: 2rem
+      div
+        &#form-container
+          margin-top: 4rem
+        &#btn-container
+          margin-top: 4.5rem
+
+          button
+            margin-bottom: 2rem
 
   &#triviaScreen
     display: none
