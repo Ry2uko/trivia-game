@@ -35,7 +35,7 @@ $(document).ready(function(){
     const res = await fetch(apiUrl);
     const data = await res.json();
     questions = data.results;
-    console.log(questions[0]);
+
     $('#titleScreen').stop(true, false).animate({
       height: 'toggle',
       opacity: 'toggle'
@@ -131,7 +131,7 @@ $(document).ready(function(){
  + title screen & script fetch
  + trivia screen, style
  + animation, style, script
- + next question + animation, question count, score
- - script (api questions), responsive design
+ + next question + animation, question count, score, script
+ - responsive design
  - sounds, end screen (try again(title screen), score, questions index, displays: category, numberofquestions, time)
 */
