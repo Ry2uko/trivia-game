@@ -55,7 +55,8 @@ $(document).ready(function(){
       $('#score-display').text(playerScore);
       $('#question-count-display').text(`${questionCount+1}/${questions.length}`)
 
-      $('#triviaScreen').stop(true, false).animate({
+      $('#triviaScreen').css('display', 'block');
+      $('#triviaScreen-div').stop(true, false).animate({
         height: 'toggle',
         opacity: 'toggle'
       }, 850);
@@ -95,33 +96,35 @@ $(document).ready(function(){
         $($('.question')[i]).css('backgroundColor', styleVar.wrong)
       }
     });
-
-    $('#triviaScreen').stop(true, false).delay(750).animate({
-      height: 'toggle',
-      opacity: 'toggle'
-    }, 850, () => {
-      const currQuestion = questions[questionCount],
-      questionChoices = [...currQuestion.incorrect_answers];
-
-      questionChoices.splice(Math.floor(Math.random() * 4), 0, currQuestion.correct_answer); // Random place in multiple choice
-
-      $('#category-display span').html(currQuestion.category);
-      $('#trivia-question').html(currQuestion.question);
-      $('.question').each(i => {
-        $($('.question')[i])
-          .css('backgroundColor', styleVar.default)
-          .html (questionChoices[i])
-          .attr('value', questionChoices[i]);
-      });
-      $('#question-count-display').text(`${questionCount+1}/${questions.length}`)
-      questionLock = false;
-
-      $('#triviaScreen').stop(true, false).animate({
+    
+    $('#triviaScreen-div')
+      .stop(true, false)
+      .delay(750)
+      .animate({
         height: 'toggle',
         opacity: 'toggle'
-      }, 850);
+      }, 850, () => {
+        const currQuestion = questions[questionCount],
+        questionChoices = [...currQuestion.incorrect_answers];
 
-    });
+        questionChoices.splice(Math.floor(Math.random() * 4), 0, currQuestion.correct_answer); // Random place in multiple choice
+
+        $('#category-display span').html(currQuestion.category);
+        $('#trivia-question').html(currQuestion.question);
+        $('.question').each(i => {
+          $($('.question')[i])
+            .css('backgroundColor', styleVar.default)
+            .html (questionChoices[i])
+            .attr('value', questionChoices[i]);
+        });
+        $('#question-count-display').text(`${questionCount+1}/${questions.length}`)
+        questionLock = false;
+
+        $('#triviaScreen-div').stop(true, false).animate({
+          height: 'toggle',
+          opacity: 'toggle'
+        }, 850);
+      });
   })
 });
 

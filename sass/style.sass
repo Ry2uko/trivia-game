@@ -17,7 +17,6 @@ body, html
 body
   background-color: $bg-color1 
   color: $text-color1 
-  overflow-y: auto
   overflow-x: hidden
 
 h1
@@ -26,7 +25,7 @@ h1
   &#title
     margin-top: 3rem  
     font:
-      size: clamp(2.8rem, 12vw, 4rem)
+      size: clamp(2.2rem, 12vw, 4rem)
       family: 'Bitter', serif
 
   &#category-display
@@ -35,15 +34,18 @@ h1
     font:
       size: 1.5rem
       family: 'Bitter', serif
+
     i
       font-size: 1.3rem
       margin: 0 10px
+
 h2 
   &#trivia-question
     text-align: center
     color: $text-color1
     user-select: none
     max-width: 1400px
+    max-height: 85px
     margin: auto
     font:
       size: 2.2rem
@@ -52,10 +54,12 @@ h2
 div
   &#titleScreen
     padding: 1rem
-    
+    overflow-y: auto
+
     @media screen and (max-width: 600px)
       h1
         margin-top: 4.5rem
+
       div
         &#form-container
           div.mb-4 
@@ -65,6 +69,7 @@ div
           input, select
             height: 3.2rem
             font-size: 1.2rem
+
         &#btn-container
             margin-top: 8rem
 
@@ -72,19 +77,27 @@ div
               padding: 0.8rem 6.5rem
               font-size: 1.8rem
 
+    @media screen and (max-width: 420px)
+      div
+        &#form-container
+          label
+            font-size: 1rem
+          input, select
+            height: 3rem
+            font-size: 1rem
+
     @media screen and (max-height: 900px)
       h1
         margin-top: 4rem
+
       div
         &#form-container
           margin-top: 8rem
+
         &#btn-container
           margin-top: 9rem
 
     @media screen and (max-height: 800px)
-      display: flex
-      flex-direction: column
-      align-items: space-around
       height: 100%
 
       h1
@@ -93,19 +106,21 @@ div
       div
         &#form-container
           margin-top: 6rem
+
         &#btn-container
           margin-top: 5.5rem
 
           button
             margin-bottom: 1rem 
 
-
     @media screen and (max-height: 670px)
       h1
         margin-top: 2rem
+
       div
         &#form-container
           margin-top: 4rem
+
         &#btn-container
           margin-top: 4.5rem
 
@@ -113,7 +128,133 @@ div
             margin-bottom: 2rem
 
   &#triviaScreen
+    overflow-y: hidden
+    min-height: 710px
     display: none
+
+    div#triviaScreen-div
+      display: none
+    
+
+    @media screen and (max-height: 720px)
+      overflow-y: auto
+
+    @media screen and (max-width: 1450px)
+      h2#trivia-question
+        font-size: 2rem
+        max-width: 1150px
+    
+    @media screen and (max-width: 1200px)
+      h2#trivia-question
+        font-size: 1.8rem
+        max-width: 960px
+
+    @media screen and (max-width: 1000px)
+      h2#trivia-question
+        font-size: 1.65rem
+        max-width: 720px
+    
+    @media screen and (max-width: 768px)
+      min-height: 680px
+
+      h1#category-display
+        font-size: 1.3rem
+
+        i
+          font-size: 1.2rem
+
+      h2#trivia-question
+        font-size: 1.55rem
+        max-width: 540px
+
+      div
+        &.stats-div
+          span
+            font-size: 1.4rem
+          i
+            font-size: 1.2rem 
+
+        &.question
+          margin: 8px 0
+
+        &.trivia-div
+          margin-top: 5.4rem
+
+    @media screen and (max-width: 568px)
+      h1#category-display
+        font-size: 1.1rem
+
+        i
+          font-size: 1rem
+
+      h2#trivia-question
+        max-width: 420px
+
+      div
+        &.stats-div
+          span 
+            font-size: 1.3rem
+          i
+            font-size: 1.1rem
+
+        &.questions-div
+          max-width: 420px
+
+        &.question
+          margin: 6px 0
+          font-size: 1.2rem
+          padding: 16px 0
+
+    @media screen and (max-width: 480px)
+      min-height: 450px
+
+      h1#category-display
+        font-size: 0.9rem
+
+        i 
+          font-size: 0.8rem
+          margin: 0 5px
+
+      h2#trivia-question
+        font-size: 1.4rem
+        max-width: 360px
+
+      div
+        &.stats-div
+          span
+            font-size: 1.1rem
+
+          i
+            font-size: 0.9rem
+
+        &.questions-div
+          max-width: 360px
+          margin-top: 5rem
+
+        &.question
+          font-size: 1.2rem
+          padding: 12px 0 
+          margin: 5px 0
+      
+    @media screen and (max-width: 360px)
+      min-height: 430px
+      h1#category-display
+        font-size: 0.8rem
+        margin-bottom: 0.1rem
+      
+      h2#trivia-question
+        font-size: 1rem
+    
+      div
+        &.stats-div
+          span
+            font-size: 0.9rem
+          i
+            font-size: 0.7rem
+        &.question
+          padding: 10px
+          margin: 4px 0
+          font-size: 0.9rem
 
   &.stats-div
     display: flex
@@ -133,6 +274,7 @@ div
 
     div.questions-div 
       margin-top: 5rem
+      margin-bottom: 1rem
 
       div.question
         user-select: none

@@ -13,7 +13,6 @@ body, html {
 body {
   background-color: #10002B;
   color: #EADDFF;
-  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -23,7 +22,7 @@ h1 {
 
 h1#title {
   margin-top: 3rem;
-  font-size: clamp(2.8rem, 12vw, 4rem);
+  font-size: clamp(2.2rem, 12vw, 4rem);
   font-family: 'Bitter', serif;
 }
 
@@ -47,6 +46,7 @@ h2#trivia-question {
       -ms-user-select: none;
           user-select: none;
   max-width: 1400px;
+  max-height: 85px;
   margin: auto;
   font-size: 2.2rem;
   font-family: 'Libre Franklin', sans-serif;
@@ -54,6 +54,7 @@ h2#trivia-question {
 
 div#titleScreen {
   padding: 1rem;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 600px) {
@@ -79,6 +80,16 @@ div#titleScreen {
   }
 }
 
+@media screen and (max-width: 420px) {
+  div#titleScreen div#form-container label {
+    font-size: 1rem;
+  }
+  div#titleScreen div#form-container input, div#titleScreen div#form-container select {
+    height: 3rem;
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-height: 900px) {
   div#titleScreen h1 {
     margin-top: 4rem;
@@ -93,16 +104,6 @@ div#titleScreen {
 
 @media screen and (max-height: 800px) {
   div#titleScreen {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: space-around;
-        -ms-flex-align: space-around;
-            align-items: space-around;
     height: 100%;
   }
   div#titleScreen h1 {
@@ -135,7 +136,150 @@ div#titleScreen {
 }
 
 div#triviaScreen {
+  overflow-y: hidden;
+  min-height: 710px;
   display: none;
+}
+
+div#triviaScreen div#triviaScreen-div {
+  display: none;
+}
+
+@media screen and (max-height: 720px) {
+  div#triviaScreen {
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  div#triviaScreen h2#trivia-question {
+    font-size: 2rem;
+    max-width: 1150px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  div#triviaScreen h2#trivia-question {
+    font-size: 1.8rem;
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  div#triviaScreen h2#trivia-question {
+    font-size: 1.65rem;
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div#triviaScreen {
+    min-height: 680px;
+  }
+  div#triviaScreen h1#category-display {
+    font-size: 1.3rem;
+  }
+  div#triviaScreen h1#category-display i {
+    font-size: 1.2rem;
+  }
+  div#triviaScreen h2#trivia-question {
+    font-size: 1.55rem;
+    max-width: 540px;
+  }
+  div#triviaScreen div.stats-div span {
+    font-size: 1.4rem;
+  }
+  div#triviaScreen div.stats-div i {
+    font-size: 1.2rem;
+  }
+  div#triviaScreen div.question {
+    margin: 8px 0;
+  }
+  div#triviaScreen div.trivia-div {
+    margin-top: 5.4rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  div#triviaScreen h1#category-display {
+    font-size: 1.1rem;
+  }
+  div#triviaScreen h1#category-display i {
+    font-size: 1rem;
+  }
+  div#triviaScreen h2#trivia-question {
+    max-width: 420px;
+  }
+  div#triviaScreen div.stats-div span {
+    font-size: 1.3rem;
+  }
+  div#triviaScreen div.stats-div i {
+    font-size: 1.1rem;
+  }
+  div#triviaScreen div.questions-div {
+    max-width: 420px;
+  }
+  div#triviaScreen div.question {
+    margin: 6px 0;
+    font-size: 1.2rem;
+    padding: 16px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div#triviaScreen {
+    min-height: 450px;
+  }
+  div#triviaScreen h1#category-display {
+    font-size: 0.9rem;
+  }
+  div#triviaScreen h1#category-display i {
+    font-size: 0.8rem;
+    margin: 0 5px;
+  }
+  div#triviaScreen h2#trivia-question {
+    font-size: 1.4rem;
+    max-width: 360px;
+  }
+  div#triviaScreen div.stats-div span {
+    font-size: 1.1rem;
+  }
+  div#triviaScreen div.stats-div i {
+    font-size: 0.9rem;
+  }
+  div#triviaScreen div.questions-div {
+    max-width: 360px;
+    margin-top: 5rem;
+  }
+  div#triviaScreen div.question {
+    font-size: 1.2rem;
+    padding: 12px 0;
+    margin: 5px 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  div#triviaScreen {
+    min-height: 430px;
+  }
+  div#triviaScreen h1#category-display {
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
+  }
+  div#triviaScreen h2#trivia-question {
+    font-size: 1rem;
+  }
+  div#triviaScreen div.stats-div span {
+    font-size: 0.9rem;
+  }
+  div#triviaScreen div.stats-div i {
+    font-size: 0.7rem;
+  }
+  div#triviaScreen div.question {
+    padding: 10px;
+    margin: 4px 0;
+    font-size: 0.9rem;
+  }
 }
 
 div.stats-div {
@@ -167,6 +311,7 @@ div.trivia-div {
 
 div.trivia-div div.questions-div {
   margin-top: 5rem;
+  margin-bottom: 1rem;
 }
 
 div.trivia-div div.questions-div div.question {
