@@ -8,3 +8,5 @@ Try it Out: https://ry2uko.github.io/trivia-game/
 ![screenshot1](assets/img/gamescreenshot.png)
 
 ![screenshot2](assets/img/gamescreenshot2.png)
+
+![screenshot-end](assets/img/endscreen.png)
