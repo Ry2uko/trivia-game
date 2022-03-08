@@ -5,6 +5,26 @@ $theme-color1: #b24dff
 $category-color: #e0aaff
 $stats-color: #d080ff
 
+@mixin chunkyBtn($topMargin, $btnId)
+  display: flex
+  justify-content: center
+  margin-top: $topMargin
+
+  button#{$btnId}
+    background-color: $bg-color1
+    color: $theme-color1  
+    border: 2px solid $theme-color1
+    border-radius: 0.3rem
+    padding: 9px 70px
+    transition: all 0.3s
+    font:
+      size: 1.55rem
+      family: 'League Spartan', sans-serif
+
+    &:hover
+      background-color: $theme-color1
+      color: $bg-color1
+
 * 
   margin: 0
   padding: 0
@@ -22,39 +42,30 @@ body
 h1
   text-align: center
 
-  &#title
-    margin-top: 3rem  
-    font:
-      size: clamp(2.2rem, 12vw, 4rem)
-      family: 'Bitter', serif
-
-  &#category-display
-    margin-top: 1rem
-    color: $category-color
-    font:
-      size: 1.5rem
-      family: 'Bitter', serif
-
-    i
-      font-size: 1.3rem
-      margin: 0 10px
-
-h2 
-  &#trivia-question
-    text-align: center
-    color: $text-color1
-    user-select: none
-    max-width: 1400px
-    max-height: 85px
-    margin: auto
-    font:
-      size: 2.2rem
-      family: 'Libre Franklin', sans-serif
-
 div
   &#titleScreen
     padding: 1rem
     overflow-y: auto
+
+    h1#title
+      margin-top: 3rem  
+      font:
+        size: clamp(2.2rem, 12vw, 4rem)
+        family: 'Bitter', serif
+    
+    div
+      &#form-container
+        margin-top: 7.5rem    
+
+        label
+          color: $text-color2 
+
+        input, select
+          background-color: $text-color2
+
+      &#btn-container
+        @include chunkyBtn($topMargin: 8rem, $btnId: "#btn-start")
+        
 
     @media screen and (max-width: 600px)
       h1
@@ -132,9 +143,70 @@ div
     min-height: 710px
     display: none
 
-    div#triviaScreen-div
-      display: none
-    
+    div
+      &#triviaScreen-div
+        display: none
+
+      &.stats-div
+        display: flex
+        justify-content: center
+        color: $stats-color
+
+        div
+          margin: 0 10px
+          span 
+            font-size: 1.6rem
+          i  
+            margin: 0 8px
+            font-size: 1.4rem
+
+      &.trivia-div
+        margin-top: 7rem
+
+        div.questions-div 
+          margin-top: 5rem
+          margin-bottom: 1rem
+
+          div.question
+            user-select: none
+            cursor: pointer
+            margin: 12px 0
+            text-align: center
+            padding: 18px 0
+            overflow: hidden
+            overflow-wrap: break-word
+            background-color: rgba(128, 71, 226, 0.2)
+            color: rgb(234, 221, 255)
+            border-radius: 0.4rem
+            transition: transform 0.2s, background-color 0.06s
+            font:
+              size: 1.4rem
+              family: 'League Spartan', sans-serif
+            
+            &:hover
+              transform: scale(1.02)
+
+    h1#category-display
+      margin-top: 1rem
+      color: $category-color
+      font:
+        size: 1.5rem
+        family: 'Bitter', serif
+
+      i
+        font-size: 1.3rem
+        margin: 0 10px
+
+    h2#trivia-question
+      text-align: center
+      color: $text-color1
+      user-select: none
+      max-width: 1400px
+      max-height: 85px
+      margin: auto
+      font:
+        size: 2.2rem
+        family: 'Libre Franklin', sans-serif    
 
     @media screen and (max-height: 720px)
       overflow-y: auto
@@ -238,6 +310,7 @@ div
       
     @media screen and (max-width: 360px)
       min-height: 430px
+
       h1#category-display
         font-size: 0.8rem
         margin-bottom: 0.1rem
@@ -251,76 +324,125 @@ div
             font-size: 0.9rem
           i
             font-size: 0.7rem
+
         &.question
           padding: 10px
           margin: 4px 0
           font-size: 0.9rem
+  
+  &#endScreen
+    display: none
+    overflow-y: hidden
 
-  &.stats-div
-    display: flex
-    justify-content: center
-    color: $stats-color
+    h1, h2
+      font-family: 'Bitter', serif
 
-    div
-      margin: 0 10px
-      span 
-        font-size: 1.6rem
-      i  
-        margin: 0 8px
-        font-size: 1.4rem
+    h1
+      margin: 3rem 0 3rem 0
+      font-size: 4.4rem
 
-  &.trivia-div
-    margin-top: 7rem
+    h2
+      &#scoreGot-display
+        font-size: 4.9rem
+        font-weight: bold
+        animation: colorDance 4s linear 0s infinite
 
-    div.questions-div 
-      margin-top: 5rem
-      margin-bottom: 1rem
+      @keyframes colorDance 
+        from
+          color: #5a189a
 
-      div.question
-        user-select: none
-        cursor: pointer
-        margin: 12px 0
-        text-align: center
-        padding: 18px 0
-        overflow: hidden
-        overflow-wrap: break-word
-        background-color: rgba(128, 71, 226, 0.2)
-        color: rgb(234, 221, 255)
-        border-radius: 0.4rem
-        transition: transform 0.2s, background-color 0.06s
-        font:
-          size: 1.4rem
-          family: 'League Spartan', sans-serif
-        
-        &:hover
-          transform: scale(1.02)
+        10%
+          color: #7b2cbf
 
-  &#form-container
-    margin-top: 7.5rem    
+        50%
+          color: #9d4edd
 
-    label
-      color: $text-color2 
+        90%
+          color: #7b2cbf
 
-    input, select
-      background-color: $text-color2
+        100%
+          color: #5a189a
+      
 
-  &#btn-container
-    display: flex
-    justify-content: center
-    margin-top: 8rem
+      &#category-display2
+        margin-top: 3rem
+        font-size: 2.2rem
 
-    button#btn-start
-      background-color: $bg-color1
-      color: $theme-color1  
-      border: 2px solid $theme-color1
-      border-radius: 0.3rem
-      padding: 9px 70px
-      transition: all 0.3s
-      font:
-        size: 1.55rem
-        family: 'League Spartan', sans-serif
+        i
+          font-size: 2.1rem
+          margin: 0 10px
+    
+    div#btn-container2
+      @include chunkyBtn($topMargin: 9rem, $btnId: "#btn-tryAgain")
 
-      &:hover
-        background-color: $theme-color1
-        color: $bg-color1
-        
+    @media screen and (max-width: 800px)
+      h1
+        margin: 3rem 0 2.5rem 0
+        font-size: 3.5rem
+
+      h2
+        &#scoreGot-display
+          font-size: 4rem
+
+        &#category-display2
+          margin-top: 3rem
+          font-size: 2rem
+
+          i
+            font-size: 1.8rem
+
+      div#btn-container2
+        @include chunkyBtn(7rem, $btnId: "#btn-tryAgain")
+  
+    @media screen and (max-width: 600px)
+      h1
+        margin: 3rem 0 2rem 0
+        font-size: 2.5rem
+      h2
+        &#scoreGot-display
+          font-size: 3.5rem
+
+        &#category-display2
+          margin-top: 2.5rem
+          font-size: 1.5rem
+
+          i
+            font-size: 1.4rem
+      
+      div#btn-container2
+        @include chunkyBtn(6rem, $btnId: "#btn-tryAgain")
+
+    @media screen and (max-width: 400px)
+      h1
+        margin: 3rem 0 2rem 0
+        font-size: 2rem
+      h2
+        &#scoreGot-display
+          font-size: 3rem
+
+        &#category-display2
+          margin-top: 2rem
+          font-size: 1rem
+
+          i
+            font-size: 0.9rem
+      
+      div#btn-container2
+        display: flex
+        justify-content: center
+        margin-top: 4rem
+        margin-bottom: 2rem
+        button#btn-tryAgain
+          background-color: $bg-color1
+          color: $theme-color1  
+          border: 2px solid $theme-color1
+          border-radius: 0.3rem
+          padding: 9px 50px
+          transition: all 0.3s
+          font:
+            size: 1.2rem
+            family: 'League Spartan', sans-serif
+
+          &:hover
+            background-color: $theme-color1
+            color: $bg-color1

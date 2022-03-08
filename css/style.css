@@ -20,41 +20,54 @@ h1 {
   text-align: center;
 }
 
-h1#title {
+div#titleScreen {
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+div#titleScreen h1#title {
   margin-top: 3rem;
   font-size: clamp(2.2rem, 12vw, 4rem);
   font-family: 'Bitter', serif;
 }
 
-h1#category-display {
-  margin-top: 1rem;
-  color: #e0aaff;
-  font-size: 1.5rem;
-  font-family: 'Bitter', serif;
+div#titleScreen div#form-container {
+  margin-top: 7.5rem;
 }
 
-h1#category-display i {
-  font-size: 1.3rem;
-  margin: 0 10px;
+div#titleScreen div#form-container label {
+  color: #ffffffe1;
 }
 
-h2#trivia-question {
-  text-align: center;
-  color: #EADDFF;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  max-width: 1400px;
-  max-height: 85px;
-  margin: auto;
-  font-size: 2.2rem;
-  font-family: 'Libre Franklin', sans-serif;
+div#titleScreen div#form-container input, div#titleScreen div#form-container select {
+  background-color: #ffffffe1;
 }
 
-div#titleScreen {
-  padding: 1rem;
-  overflow-y: auto;
+div#titleScreen div#btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 8rem;
+}
+
+div#titleScreen div#btn-container button#btn-start {
+  background-color: #10002B;
+  color: #b24dff;
+  border: 2px solid #b24dff;
+  border-radius: 0.3rem;
+  padding: 9px 70px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1.55rem;
+  font-family: 'League Spartan', sans-serif;
+}
+
+div#titleScreen div#btn-container button#btn-start:hover {
+  background-color: #b24dff;
+  color: #10002B;
 }
 
 @media screen and (max-width: 600px) {
@@ -143,6 +156,91 @@ div#triviaScreen {
 
 div#triviaScreen div#triviaScreen-div {
   display: none;
+}
+
+div#triviaScreen div.stats-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #d080ff;
+}
+
+div#triviaScreen div.stats-div div {
+  margin: 0 10px;
+}
+
+div#triviaScreen div.stats-div div span {
+  font-size: 1.6rem;
+}
+
+div#triviaScreen div.stats-div div i {
+  margin: 0 8px;
+  font-size: 1.4rem;
+}
+
+div#triviaScreen div.trivia-div {
+  margin-top: 7rem;
+}
+
+div#triviaScreen div.trivia-div div.questions-div {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+div#triviaScreen div.trivia-div div.questions-div div.question {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  margin: 12px 0;
+  text-align: center;
+  padding: 18px 0;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  background-color: rgba(128, 71, 226, 0.2);
+  color: #eaddff;
+  border-radius: 0.4rem;
+  -webkit-transition: background-color 0.06s, -webkit-transform 0.2s;
+  transition: background-color 0.06s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.06s;
+  transition: transform 0.2s, background-color 0.06s, -webkit-transform 0.2s;
+  font-size: 1.4rem;
+  font-family: 'League Spartan', sans-serif;
+}
+
+div#triviaScreen div.trivia-div div.questions-div div.question:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+div#triviaScreen h1#category-display {
+  margin-top: 1rem;
+  color: #e0aaff;
+  font-size: 1.5rem;
+  font-family: 'Bitter', serif;
+}
+
+div#triviaScreen h1#category-display i {
+  font-size: 1.3rem;
+  margin: 0 10px;
+}
+
+div#triviaScreen h2#trivia-question {
+  text-align: center;
+  color: #EADDFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  max-width: 1400px;
+  max-height: 85px;
+  margin: auto;
+  font-size: 2.2rem;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 @media screen and (max-height: 720px) {
@@ -282,88 +380,84 @@ div#triviaScreen div#triviaScreen-div {
   }
 }
 
-div.stats-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #d080ff;
+div#endScreen {
+  display: none;
+  overflow-y: hidden;
 }
 
-div.stats-div div {
+div#endScreen h1, div#endScreen h2 {
+  font-family: 'Bitter', serif;
+}
+
+div#endScreen h1 {
+  margin: 3rem 0 3rem 0;
+  font-size: 4.4rem;
+}
+
+div#endScreen h2#scoreGot-display {
+  font-size: 4.9rem;
+  font-weight: bold;
+  -webkit-animation: colorDance 4s linear 0s infinite;
+          animation: colorDance 4s linear 0s infinite;
+}
+
+@-webkit-keyframes colorDance {
+  from {
+    color: #5a189a;
+  }
+  10% {
+    color: #7b2cbf;
+  }
+  50% {
+    color: #9d4edd;
+  }
+  90% {
+    color: #7b2cbf;
+  }
+  100% {
+    color: #5a189a;
+  }
+}
+
+@keyframes colorDance {
+  from {
+    color: #5a189a;
+  }
+  10% {
+    color: #7b2cbf;
+  }
+  50% {
+    color: #9d4edd;
+  }
+  90% {
+    color: #7b2cbf;
+  }
+  100% {
+    color: #5a189a;
+  }
+}
+
+div#endScreen h2#category-display2 {
+  margin-top: 3rem;
+  font-size: 2.2rem;
+}
+
+div#endScreen h2#category-display2 i {
+  font-size: 2.1rem;
   margin: 0 10px;
 }
 
-div.stats-div div span {
-  font-size: 1.6rem;
-}
-
-div.stats-div div i {
-  margin: 0 8px;
-  font-size: 1.4rem;
-}
-
-div.trivia-div {
-  margin-top: 7rem;
-}
-
-div.trivia-div div.questions-div {
-  margin-top: 5rem;
-  margin-bottom: 1rem;
-}
-
-div.trivia-div div.questions-div div.question {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-  margin: 12px 0;
-  text-align: center;
-  padding: 18px 0;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  background-color: rgba(128, 71, 226, 0.2);
-  color: #eaddff;
-  border-radius: 0.4rem;
-  -webkit-transition: background-color 0.06s, -webkit-transform 0.2s;
-  transition: background-color 0.06s, -webkit-transform 0.2s;
-  transition: transform 0.2s, background-color 0.06s;
-  transition: transform 0.2s, background-color 0.06s, -webkit-transform 0.2s;
-  font-size: 1.4rem;
-  font-family: 'League Spartan', sans-serif;
-}
-
-div.trivia-div div.questions-div div.question:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-}
-
-div#form-container {
-  margin-top: 7.5rem;
-}
-
-div#form-container label {
-  color: #ffffffe1;
-}
-
-div#form-container input, div#form-container select {
-  background-color: #ffffffe1;
-}
-
-div#btn-container {
+div#endScreen div#btn-container2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 8rem;
+  margin-top: 9rem;
 }
 
-div#btn-container button#btn-start {
+div#endScreen div#btn-container2 button#btn-tryAgain {
   background-color: #10002B;
   color: #b24dff;
   border: 2px solid #b24dff;
@@ -375,8 +469,132 @@ div#btn-container button#btn-start {
   font-family: 'League Spartan', sans-serif;
 }
 
-div#btn-container button#btn-start:hover {
+div#endScreen div#btn-container2 button#btn-tryAgain:hover {
   background-color: #b24dff;
   color: #10002B;
+}
+
+@media screen and (max-width: 800px) {
+  div#endScreen h1 {
+    margin: 3rem 0 2.5rem 0;
+    font-size: 3.5rem;
+  }
+  div#endScreen h2#scoreGot-display {
+    font-size: 4rem;
+  }
+  div#endScreen h2#category-display2 {
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+  div#endScreen h2#category-display2 i {
+    font-size: 1.8rem;
+  }
+  div#endScreen div#btn-container2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 7rem;
+  }
+  div#endScreen div#btn-container2 button#btn-tryAgain {
+    background-color: #10002B;
+    color: #b24dff;
+    border: 2px solid #b24dff;
+    border-radius: 0.3rem;
+    padding: 9px 70px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 1.55rem;
+    font-family: 'League Spartan', sans-serif;
+  }
+  div#endScreen div#btn-container2 button#btn-tryAgain:hover {
+    background-color: #b24dff;
+    color: #10002B;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div#endScreen h1 {
+    margin: 3rem 0 2rem 0;
+    font-size: 2.5rem;
+  }
+  div#endScreen h2#scoreGot-display {
+    font-size: 3.5rem;
+  }
+  div#endScreen h2#category-display2 {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+  div#endScreen h2#category-display2 i {
+    font-size: 1.4rem;
+  }
+  div#endScreen div#btn-container2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 6rem;
+  }
+  div#endScreen div#btn-container2 button#btn-tryAgain {
+    background-color: #10002B;
+    color: #b24dff;
+    border: 2px solid #b24dff;
+    border-radius: 0.3rem;
+    padding: 9px 70px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 1.55rem;
+    font-family: 'League Spartan', sans-serif;
+  }
+  div#endScreen div#btn-container2 button#btn-tryAgain:hover {
+    background-color: #b24dff;
+    color: #10002B;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  div#endScreen h1 {
+    margin: 3rem 0 2rem 0;
+    font-size: 2rem;
+  }
+  div#endScreen h2#scoreGot-display {
+    font-size: 3rem;
+  }
+  div#endScreen h2#category-display2 {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  div#endScreen h2#category-display2 i {
+    font-size: 0.9rem;
+  }
+  div#endScreen div#btn-container2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  div#endScreen div#btn-container2 button#btn-tryAgain {
+    background-color: #10002B;
+    color: #b24dff;
+    border: 2px solid #b24dff;
+    border-radius: 0.3rem;
+    padding: 9px 50px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 1.2rem;
+    font-family: 'League Spartan', sans-serif;
+  }
+  div#endScreen div#btn-container2 button#btn-tryAgain:hover {
+    background-color: #b24dff;
+    color: #10002B;
+  }
 }
 /*# sourceMappingURL=style.css.map */
